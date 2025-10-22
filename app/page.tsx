@@ -60,18 +60,18 @@ export default function Home() {
   const [hoverIndex, setHoverIndex] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen w-full grid place-items-center px-4 md:px-8 py-4 md:py-6">
+    <div className="h-screen w-full grid place-items-center px-4 md:px-8 py-4 md:py-6">
       {/* Grey square panel layered above main background */}
-      <div className="relative w-full max-w-[1500px] max-h-[92vh] overflow-auto rounded-[28px] bg-[#111317]/85 ring-1 ring-white/10 shadow-[0_20px_80px_rgba(0,0,0,0.6)] backdrop-blur-sm p-5 md:p-6">
-        <div className="mx-auto max-w-[1600px] md:pl-[calc(50%+2rem)] py-3 md:py-4">
-          <div className="flex flex-col space-y-4 md:space-y-4">
+      <div className="relative w-[96vw] h-[92vh] overflow-hidden rounded-[28px] bg-[linear-gradient(180deg,#373E44_-100%,#191B1F_100%)] shadow-[10px_10px_40px_10px_#00000080] p-5 md:p-6">
+        <div className="mx-auto h-full w-full px-8 md:px-12 py-6">
+          <div className="flex h-full flex-col justify-center space-y-6 items-end">
             {/* Tabs widget */}
-            <div className="rounded-3xl bg-[#1a2029]/60 p-5 min-h-[300px] shadow-[0_4px_25px_rgba(0,0,0,0.4)] ring-1 ring-white/10 backdrop-blur-md">
-              <div className="flex items-start gap-4">
+            <div className="rounded-3xl bg-[#363C43] p-4 w-[640px] h-[300px] overflow-hidden opacity-100 shadow-[0_4px_25px_rgba(0,0,0,0.4)] ring-1 ring-white/10 backdrop-blur-md">
+              <div className="flex items-start gap-3 w-full overflow-hidden">
                 <SideRail />
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   {/* Tabs Bar (own black bar) */}
-                  <div className="relative flex items-center rounded-xl bg-[#0a0f16]/90 p-2 ring-1 ring-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <div className="relative flex items-center rounded-xl bg-[#0a0f16]/90 p-2 w-full max-w-[597px] h-[49px] gap-[6px] ring-1 ring-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
                     {/* Hover indicator */}
                     <span
                       className="pointer-events-none absolute left-2 top-2 bottom-2 z-1 w-1/3 rounded-lg bg-white/10 transition-[transform,opacity] duration-200 ease-out"
@@ -104,24 +104,22 @@ export default function Home() {
                   </div>
 
                   {/* Content Box (separate grey box) */}
-                  <div className="relative mt-4 h-52 overflow-y-auto rounded-2xl ring-1 ring-white/10 bg-[#17191E] p-5 text-gray-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
-                    <div className="mb-3 h-[3px] w-12 rounded-full bg-white/10" />
-                    <p className="whitespace-pre-line text-sm leading-6 text-gray-300">
+                  <div className="relative mt-3 h-[220px] w-full max-w-full overflow-y-auto no-scrollbar rounded-xl ring-1 ring-white/10 bg-[#363C43] p-4 text-gray-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                    <p className="whitespace-pre-line font-(--font-jakarta) text-[20px] leading-none tracking-[0] text-gray-300">
                       {aboutText}
                     </p>
-                    {/* decorative scrollbar line on right */}
-                    <div className="pointer-events-none absolute right-2 top-6 h-16 w-1 rounded-full bg-white/20" />
+                    {/* decorative scrollbar removed per spec */}
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Middle separator line */}
-            <div className="my-4 h-1 w-full rounded bg-white/10" />
+            {/* Middle separator line aligned under widgets */}
+            <div className="my-4 h-1 w-[640px] self-end rounded bg-white/10" />
 
             {/* Gallery widget */}
-            <div className="rounded-3xl bg-[#1a2029]/60 p-5 min-h-[300px] shadow-[0_4px_25px_rgba(0,0,0,0.4)] ring-1 ring-white/10 backdrop-blur-md">
-              <div className="flex items-start gap-4">
+            <div className="rounded-3xl bg-[#363C43] p-4 w-[640px] h-[300px] opacity-100 shadow-[0_4px_25px_rgba(0,0,0,0.4)] ring-1 ring-white/10 backdrop-blur-md">
+              <div className="flex items-start gap-3">
                 <SideRail />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
