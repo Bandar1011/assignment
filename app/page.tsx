@@ -67,11 +67,11 @@ export default function Home() {
           <div className="flex h-full flex-col justify-center space-y-6 items-end">
             {/* Tabs widget */}
             <div className="rounded-3xl bg-[#363C43] p-4 w-[640px] h-[300px] overflow-hidden opacity-100 shadow-[0_4px_25px_rgba(0,0,0,0.4)] ring-1 ring-white/10 backdrop-blur-md">
-              <div className="flex items-start gap-3 w-full overflow-hidden">
+              <div className="flex items-start gap-2 w-full overflow-hidden">
                 <SideRail />
                 <div className="flex-1 min-w-0">
                   {/* Tabs Bar (own black bar) */}
-                  <div className="relative flex items-center rounded-xl bg-[#0a0f16]/90 p-2 w-full max-w-[597px] h-[49px] gap-[6px] ring-1 ring-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
+                  <div className="relative flex items-center rounded-xl bg-[#171717] p-2 w-full max-w-[597px] h-[49px] gap-[6px] shadow-[inset_0px_4.96px_12.4px_2.48px_#00000040]">
                     {/* Hover indicator */}
                     <span
                       className="pointer-events-none absolute left-2 top-2 bottom-2 z-1 w-1/3 rounded-lg bg-white/10 transition-[transform,opacity] duration-200 ease-out"
@@ -93,8 +93,8 @@ export default function Home() {
                           onClick={() => setActiveTab(key)}
                           onMouseEnter={() => setHoverIndex(idx)}
                           onMouseLeave={() => setHoverIndex(null)}
-                          className={`z-3 flex-1 rounded-xl px-5 py-3 text-sm font-medium tracking-wide transition ${
-                            isActive ? "text-white" : "text-[#9CA3AF] hover:text-white"
+                          className={`z-3 flex-1 rounded-xl px-5 py-3 text-sm font-semibold tracking-wide transition ${
+                            isActive ? "text-white" : "text-zinc-200 hover:text-white"
                           }`}
                         >
                           {label}
@@ -104,8 +104,8 @@ export default function Home() {
                   </div>
 
                   {/* Content Box (separate grey box) */}
-                  <div className="relative mt-3 h-[220px] w-full max-w-full overflow-y-auto no-scrollbar rounded-xl ring-1 ring-white/10 bg-[#363C43] p-4 text-gray-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
-                    <p className="whitespace-pre-line font-(--font-jakarta) text-[20px] leading-none tracking-[0] text-gray-300">
+                  <div className="relative mt-3 h-[220px] w-full max-w-full overflow-y-auto no-scrollbar rounded-xl bg-[#363C43] p-4 text-gray-200">
+                    <p className="whitespace-pre-line font-(--font-jakarta) text-[18px] leading-none tracking-[0] text-[#969696]">
                       {aboutText}
                     </p>
                     {/* decorative scrollbar removed per spec */}
@@ -119,11 +119,11 @@ export default function Home() {
 
             {/* Gallery widget */}
             <div className="rounded-3xl bg-[#363C43] p-4 w-[640px] h-[300px] opacity-100 shadow-[0_4px_25px_rgba(0,0,0,0.4)] ring-1 ring-white/10 backdrop-blur-md">
-              <div className="flex items-start gap-3">
+              <div className="flex items-start gap-2">
                 <SideRail />
                 <div className="flex-1">
                   <div className="flex items-center justify-between">
-                    <div className="rounded-xl bg-[#1b2332] px-4 py-2 text-sm font-semibold text-zinc-200">
+                    <div className="rounded-xl bg-[#171717] px-4 py-2 text-sm font-semibold text-zinc-200">
                       Gallery
                     </div>
                     <div className="flex items-center gap-3">
@@ -176,7 +176,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="mt-4 h-1 w-full rounded bg-white/10" />
+          <div className="mt-4 h-1 w-[640px] rounded bg-white/10 ml-auto mr-0" />
         </div>
       </div>
     </div>
